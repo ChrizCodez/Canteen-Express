@@ -1,95 +1,70 @@
-🍽️ Canteen Express: Responsive School Meal Ordering App
-Canteen Express is a modern, fully responsive web application designed to eliminate long queues in school cafeterias. By moving meal pre-ordering and payment online, the system significantly improves operational efficiency and creates a faster, less stressful dining experience for students and staff.
+# Getting Started with Create React App
 
-🚀 Key Features & Goals
-This application is built with a mobile-first, single codebase approach, ensuring a seamless user experience across all devices—from student smartphones to kitchen desktop monitors.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Feature
+## Available Scripts
 
-Description
+In the project directory, you can run:
 
-Benefit
+### `npm start`
 
-Cross-Device Responsiveness
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Built with a single, fluid codebase that adjusts layout perfectly to mobile, tablet, or desktop screens.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Guarantees optimal viewing and touch functionality for all users.
+### `npm test`
 
-Digital Payment Gateway
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-A secure system to process online payments, supporting various card methods and digital wallets.
+### `npm run build`
 
-Speeds up the transaction process and increases payment convenience.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Order Management Dashboard
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-A secure, real-time backend interface for kitchen staff to monitor, manage, and track all incoming orders instantly.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Enhances kitchen efficiency and inventory planning.
+### `npm run eject`
 
-Express Pick-up System
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Utilizes unique digital receipts and QR codes for quick, verified meal collection at the counter.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Reduces student wait times during peak lunch periods.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Data Analytics Module
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Collects and visualizes key data on order volume, meal preferences, and potential food waste.
+## Learn More
 
-Supports data-driven decisions on menu planning and inventory management.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Nutritional Information Display
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Provides students and parents detailed, accessible information on ingredients, allergens, and nutritional facts for every meal item.
+### Code Splitting
 
-Promotes transparency and supports students with dietary needs.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-✨ Core Functionalities
-The application enables the following user actions:
+### Analyzing the Bundle Size
 
-For Students & Users
-View Menu: Browse the dynamic daily and weekly menu with an interface that adjusts fluidly to any device size.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Place Order & Pay: Select meals, add them to a digital cart, and complete payment securely through the integrated gateway.
+### Making a Progressive Web App
 
-Quick Pick-up: Display a unique QR code on their mobile device for a fast, hassle-free meal retrieval.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-Submit Feedback: Easily rate meals and provide valuable comments to kitchen staff directly through the app.
+### Advanced Configuration
 
-For Staff & Administrators
-Manage Orders: View, track, and update the status of all incoming orders from the responsive kitchen dashboard.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-Analyze Reports: Generate interactive reports to analyze meal popularity and identify trends for improved inventory decisions.
+### Deployment
 
-Automated Notifications: The system sends browser-based push notifications and email alerts for order cut-offs and confirmations.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-💻 Tech Stack (To be updated)
-Frontend: React (JSX/Functional Components)
+### `npm run build` fails to minify
 
-Styling: Tailwind CSS (for rapid, responsive UI development)
-
-Backend: Spring Boot (Java)
-
-Database: (To be decided - likely PostgreSQL or MySQL)
-
-🛠️ Installation and Setup
-Prerequisites
-Node.js (18+)
-
-npm or yarn
-
-Java/Maven (for Spring Boot backend setup)
-
-Frontend Setup (frontend folder)
-# Clone the repository
-git clone [YOUR_REPOSITORY_URL]
-cd frontend
-
-# Install dependencies
-npm install
-
-# Run the development server
-npm start
-# App will run on http://localhost:3000
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
