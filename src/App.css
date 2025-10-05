@@ -1,30 +1,58 @@
-/* -------------------------------------------------- /
-/ --- Canteen Express Styles (App.css) --- /
-/ -------------------------------------------------- */
+/* -------------------------------------------------- */
+/* --- Canteen Express Styles (App.css) --- */
+/* -------------------------------------------------- */
 
 /* --- Color Variables --- */
 :root {
---maroon: #8B1A1A;
---tan-light: #EBD899;
---tan-dark: #F7E7C4;
+--maroon: #8B1A1A; /* Primary Color */
+--tan-light: #EBD899; /* Light Background Color */
+--tan-dark: #F7E7C4; /* Card/Form Background Color */
+
+/* Re-mapping old variables to the new palette for consistency */
+--color-primary: var(--maroon);
+--color-primary-accent: #6a1313; /* Darker Maroon for hover */
+--color-nav-bg: var(--tan-dark);
+--color-page-bg: var(--tan-light);
+--color-card-bg: #ffffff; /* Keeping white for content cards */
+--color-button-red: var(--maroon);
+--color-button-yellow: #FFD700;
+
+--color-secondary: #4b5563; /* Darker gray for text */
+--color-success: #10b981; /* Emerald green for status/success */
+--color-danger: #ef4444; /* Red for errors/logout */
+--color-text: #1f2937; /* Very dark text */
+--color-placeholder: #9ca3af;
+--color-shadow: rgba(0, 0, 0, 0.15);
+--color-border: var(--maroon);
 }
 
 /* --- Global Layout and Typography --- */
-@import url('https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DInter:wght%40400%3B700%3B800%26display%3Dswap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-page-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
 
 /* The main container for the entire React app */
 .app-main-container {
 min-height: 100vh;
-background-color: var(--tan-light);
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 1rem;
-font-family: 'Inter', sans-serif;
+width: 100%;
 box-sizing: border-box;
 }
 
 /* --- AuthForm Styles --- */
+
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
 
 .auth-container {
 width: 100%;
@@ -157,6 +185,7 @@ justify-content: center;
 align-items: center;
 padding: 32px;
 color: var(--maroon);
+min-height: calc(100vh - 80px); /* Ensures it centers when used inside app-main-container */
 }
 
 .spinner {
@@ -182,65 +211,254 @@ animation: spin 1s linear infinite;
 100% { transform: rotate(360deg); }
 }
 
-/* --- Dashboard Styles --- */
+/* --- Dashboard Styles (Customer View) --- */
 
-.dashboard-container {
-width: 100%;
-max-width: 640px;
-background-color: white;
-box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-padding: 40px;
-border-radius: 12px;
-border-left: 4px solid #10b981; /* Emerald green */
+/* Header & Navigation */
+.app-header {
+  background-color: var(--tan-dark); /* Using Tan Dark for the header */
+  border-bottom: 2px solid var(--maroon);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.dashboard-title {
-font-size: 1.875rem;
-font-weight: bold;
-color: #1f2937;
-margin-bottom: 16px;
+.logo-section {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--maroon);
 }
 
-.dashboard-text {
-font-size: 1.125rem;
-color: #4b5563;
-margin-bottom: 24px;
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background-color: var(--maroon);
+  border-radius: 4px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--tan-light);
 }
 
-.integration-notes {
-padding: 16px;
-background-color: #f9fafb;
-border-radius: 8px;
-border: 1px solid #e5e7eb;
-margin-bottom: 24px;
+.nav-controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
 
-.notes-title {
-font-size: 0.875rem;
-font-weight: 600;
-color: #374151;
-margin-bottom: 8px;
+.nav-button, .user-icon {
+  padding: 8px 12px;
+  border: 1px solid var(--maroon);
+  border-radius: 4px;
+  background-color: white;
+  color: var(--maroon);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  text-decoration: none; /* for potential links */
 }
 
-.notes-list {
-font-size: 0.875rem;
-color: #4b5563;
-list-style: disc;
-list-style-position: inside;
-padding-left: 4px;
-line-height: 1.5;
+.nav-button:hover {
+  background-color: var(--tan-light);
 }
 
-.logout-button {
-background-color: #ef4444;
-color: white;
-font-weight: 600;
-padding: 8px 16px;
-border-radius: 8px;
-transition: background-color 0.3s;
-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+.user-icon {
+  padding: 8px;
+  font-size: 1.4rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.logout-button:hover {
-background-color: #dc2626;
+.logout-icon {
+  background-color: transparent;
+  border: none;
+  color: var(--maroon);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+/* Dashboard Content Wrapper */
+.dashboard-content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Greeting Card */
+.greeting-card {
+  background-color: var(--color-card-bg);
+  padding: 25px;
+  border-radius: 8px;
+  border: 2px solid var(--maroon);
+  box-shadow: 0 4px 8px var(--color-shadow);
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.greeting-text h2 {
+  font-size: 1.8rem;
+  color: var(--maroon);
+  margin: 0;
+  font-weight: 700;
+}
+
+.greeting-text p {
+  font-size: 1rem;
+  color: var(--color-secondary);
+  margin: 5px 0 0 0;
+}
+
+/* Meal Category Buttons */
+.category-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.category-button {
+  flex-shrink: 0;
+  padding: 10px 20px;
+  border: 2px solid var(--maroon);
+  border-radius: 4px;
+  background-color: var(--color-card-bg);
+  color: var(--maroon);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.category-button:hover, .category-button.active {
+  background-color: var(--maroon);
+  color: var(--tan-light);
+}
+
+/* Meal Card Grid */
+.meal-card-grid {
+  display: grid;
+  gap: 25px;
+  /* Responsive grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.meal-card {
+  background-color: var(--color-card-bg);
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid var(--tan-dark);
+  box-shadow: 0 1px 4px var(--color-shadow);
+  text-align: center;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+
+.meal-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px var(--color-shadow);
+}
+
+.meal-placeholder {
+  height: 140px;
+  background-color: var(--tan-light);
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 1px dashed var(--color-secondary);
+}
+
+.card-title {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--color-text);
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.card-price {
+  font-weight: 700;
+  color: var(--maroon);
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.add-to-cart-button {
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  letter-spacing: 0.05em;
+}
+
+.add-to-cart-button.red {
+  background-color: var(--maroon);
+  color: white;
+}
+
+.add-to-cart-button.yellow {
+  background-color: var(--color-button-yellow);
+  color: var(--maroon);
+}
+
+.add-to-cart-button:hover {
+  opacity: 0.9;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .nav-controls {
+    width: 100%;
+    justify-content: space-between;
+    gap: 5px;
+  }
+
+  .nav-button {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .logo-section {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .greeting-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .greeting-text h2 {
+    font-size: 1.5rem;
+  }
+  
+  .dashboard-content {
+    padding: 15px;
+  }
+  
+  .meal-card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 }
