@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'; 
 
+import ChickenSandwichImg from './images/chicken_sandwich.png';
+
 // --- Constants & Mock Data ---
 const MOCK_JWT_PREFIX = "mock_jwt_for_";
 const TOKEN_KEY = 'canteen_auth_token';
 
 const MOCK_MEALS = [
-  { id: 1, name: "Chicken Sandwich", price: 4.50, color: 'red' },
+  { id: 1, name: "Chicken Sandwich", price: 4.50, color: 'red' , image: ChickenSandwichImg},
   { id: 2, name: "Veggie Wrap", price: 5.00, color: 'yellow' },
   { id: 3, name: "Burger Combo", price: 6.75, color: 'red' },
   { id: 4, name: "Pasta Salad", price: 4.00, color: 'yellow' },
@@ -77,7 +79,7 @@ const HeaderNav = ({ cartItemCount, onLogout, onCartClick }) => (
   <header className="app-header">
     <div className="logo-section">
       <div className="logo-icon">W</div>
-      Wildcats Cafeteria
+      Canteen Express
     </div>
     <div className="nav-controls">
       {/* Updated to show cart count and open cart modal */}
@@ -97,7 +99,16 @@ const HeaderNav = ({ cartItemCount, onLogout, onCartClick }) => (
 
 const MealCard = ({ meal, onAddToCart }) => (
   <div className="meal-card">
-    <div className="meal-placeholder"></div>
+    
+    {/*<div className="meal-placeholder"></div> */}
+    
+    <img 
+      src={meal.image} 
+      alt={meal.name} 
+      className="meal-image" // You will need to add CSS for this class!
+    />
+
+
     <h4 className="card-title">{meal.name}</h4>
     <p className="card-price">${meal.price.toFixed(2)}</p>
     <button 
@@ -159,7 +170,7 @@ const AuthForm = ({ onAuthSuccess }) => {
   const [loading, setLoading] = useState(false);
 
   const title = isLogin ? 'LOG IN' : 'REGISTER';
-  const subTitle = 'Wildcats Cafeteria';
+  const subTitle = 'Canteen Express';
   const buttonText = isLogin ? 'LOGIN' : 'REGISTER';
   const switchText = isLogin ? 'No account yet? Register here' : 'Already have an account? Log in here';
 
